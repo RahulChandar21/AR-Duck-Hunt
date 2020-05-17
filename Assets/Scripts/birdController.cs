@@ -35,6 +35,5 @@ public class birdController : MonoBehaviour
 
         transform.LookAt(duckTarget.obj.transform);
         transform.Translate(0, 0, _birdSpeed * Time.deltaTime);
-        
     }
 }

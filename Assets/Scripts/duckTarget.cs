@@ -7,9 +7,6 @@ public class duckTarget : MonoBehaviour
     public static duckTarget obj;
     public float targetDifficulty = 2.25f;
 
-    // Start is called before the first frame update
-    // Awake is a default function that executes even before start.
-    //This could be used to initialize static variables.
     void Start()
     {
         if(obj == null)

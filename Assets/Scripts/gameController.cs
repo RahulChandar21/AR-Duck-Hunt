@@ -26,7 +26,6 @@ public class gameController : DefaultTrackableEventHandler
     public GameObject lifeText;
     public GameObject terrain;
     public GameObject gun;
-
     public GameObject guiShootButton;
     public GameObject guiStartPanel;
     public GameObject guiGameOverPanel;
@@ -49,12 +48,7 @@ public class gameController : DefaultTrackableEventHandler
             joyStick = this;
         }
 
-        //Assigning variable in Game controller to GUI value.
-
         showStartPanel();
-
-        /*OnTrackingFound();
-        OnTrackingLost();*/
     }
 
 
@@ -113,20 +107,6 @@ public class gameController : DefaultTrackableEventHandler
 
     }
 
-    /*protected override void OnTrackingFound()
-    {
-        imageTargetFound = true;
-        base.OnTrackingFound();
-        Debug.Log("1st method working");
-    }
-
-    protected override void OnTrackingLost()
-    {
-        imageTargetFound = false;
-        base.OnTrackingLost();
-        Debug.Log("2nd method working");
-    }*/
-
     public void imageTargetActive()
     {
         imageTargetFound = true;
@@ -155,7 +135,6 @@ public class gameController : DefaultTrackableEventHandler
     {
         guiStartPanel.SetActive(true);
         hideGameItems();
-
     }
 
     public void hideStartPanel()
@@ -167,14 +146,11 @@ public class gameController : DefaultTrackableEventHandler
     public void hideGameItems()
     {
         guiShootButton.SetActive(false);
-
         shell[0].SetActive(false);
         shell[1].SetActive(false);
         shell[2].SetActive(false);
-
         gunTarget.SetActive(false);
         dogImage.SetActive(false);
-
         scoreText.SetActive(false);
         lifeText.SetActive(false);
         terrain.SetActive(false);
@@ -184,12 +160,8 @@ public class gameController : DefaultTrackableEventHandler
 
     public void showGameItems()
     {
-
         guiShootButton.SetActive(true);
-
         gunTarget.SetActive(true);
-        
-
         scoreText.SetActive(true);
         lifeText.SetActive(true);
         terrain.SetActive(true);
@@ -199,10 +171,8 @@ public class gameController : DefaultTrackableEventHandler
 
     IEnumerator gameOver()
     {
-        
         gameStatus = false;
         gameOverScore.text = playerScore.ToString();
-
         guiGameOverPanel.SetActive(true);
         yield return new WaitForSeconds(3.0f);
         GameOverPanelObjects.SetActive(true);
@@ -218,7 +188,6 @@ public class gameController : DefaultTrackableEventHandler
         shotsAvailable = 3;
         playerScore = 0;
         birdController._birdSpeed = 2.0f;
-
         gameStatus = true;
         playSound(0);
         hideStartPanel();

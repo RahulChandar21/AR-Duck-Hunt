@@ -16,8 +16,6 @@ public class mainController : MonoBehaviour
     {
         source = GetComponent<AudioSource>();
         playSound(0);
-
-        
     }
 
 
@@ -31,7 +29,6 @@ public class mainController : MonoBehaviour
     {
         playSound(1);
         yield return new WaitForSeconds(2.0f);
-        
     }
 
     public void startGame()

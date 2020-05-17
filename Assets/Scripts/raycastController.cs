@@ -37,7 +37,6 @@ public class raycastController : MonoBehaviour
         objectHit.text = "You are ready to go!";
         gunActive = true;
         StartCoroutine("spawnDuck");
-        
     }
 
 
@@ -79,9 +78,7 @@ public class raycastController : MonoBehaviour
         if (gunActive == true)
         {
             StartCoroutine("shootGun");
-            
         }
-
     }
 
     IEnumerator shootGun()
@@ -137,7 +134,6 @@ public class raycastController : MonoBehaviour
 
             //update game controller.
             gameController.joyStick.shotsAvailable -= 1;
-            
         }
 
         gunActive = false;
